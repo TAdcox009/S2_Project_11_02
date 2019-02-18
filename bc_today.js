@@ -1,20 +1,31 @@
-
+"use strict";
 /*
-   New Perspectives on HTML5 and CSS3, 7th Edition
-   Tutorial 9
-   Case Problem 2
+  New Perspectives on HTML5 and CSS3, 7th Edition
+  Tutorial 9
+  Case Problem 2
 
-   Today at the Union Script
-   Author: 
-   Date:   
-   
-   This script uses the getEvent() function to return the
-   HTML code containin the daily events at the Bridger College
-   student union.
+  Today at the Union Script
+  Author: Todd Adcox Jr
+  Date:   2-17-19
+ 
+  This script uses the getEvent() function to return the
+  HTML code containin the daily events at the Bridger College
+  student union.
 
 */
 
+// This creates a variable named thisDate containing the Date object for the date October 12, 2018.
+// This creates a variable named datestring, it contains the text of the thisDate variable using local conventions.
+// This creates a variable named dateHtML containing the text string of <h2>date</h2> where date is the value of the dateString variable.
+// This creates a variable named thisDay containing the day of the week number from the thisDate variable.
+var thisDate = new Date("Febuary 17, 2019");
+var dateString = thisDate.toLocaleString();
+var dateHTML = "<h2>" + dateString + "</h2>";
+var thisDay = thisDate.getDay();
 
+// The thisDay variable is the parameter value for the getEvent() function, it sets the HTML code of that day’s events and store that value in a variable named eventHtML.
+var eventHTML = getEvent(thisDay);
+document.getElementById("unionToday").insertAdjacentHTML('beforeend', dateHTML + eventHTML);
 
 function getEvent(day) {
    var eventHTML;
